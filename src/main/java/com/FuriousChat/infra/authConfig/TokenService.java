@@ -11,9 +11,6 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-
-
-
 @Service
 public class TokenService {
 
@@ -41,7 +38,7 @@ public class TokenService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
-                    .withIssuer("BarberClub")
+                    .withIssuer("FuriousChat")
                     .build()
                     .verify(token)
                     .getSubject();
